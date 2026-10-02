@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "feedsheriff",
-  "version": "1.0.1",
+  "name": "feedsheriff-mcp",
+  "version": "1.0.2",
   "description": "Clean Gmail, Outlook, and Zoho inboxes from your AI agent. Write filters in plain English, preview every cleanup, undo for 30 days.",
   "author": {
     "name": "FeedSheriff",

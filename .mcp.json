@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "feedsheriff": {
+    "feedsheriff-mcp": {
       "type": "http",
       "url": "https://feedsheriff.com/mcp"
     }

@@ -1,5 +1,5 @@
 {
-  "name": "feedsheriff",
+  "name": "feedsheriff-mcp",
   "owner": {
     "name": "FeedSheriff",
     "email": "sarthak@feedsheriff.com"
@@ -9,7 +9,7 @@
   },
   "plugins": [
     {
-      "name": "feedsheriff",
+      "name": "feedsheriff-mcp",
       "source": "./",
       "description": "Clean Gmail, Outlook, and Zoho inboxes from Claude Code. Preview every cleanup, undo for 30 days.",
       "category": "productivity",

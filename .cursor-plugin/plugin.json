@@ -1,6 +1,6 @@
 {
-  "name": "feedsheriff",
-  "version": "1.0.1",
+  "name": "feedsheriff-mcp",
+  "version": "1.0.2",
   "description": "Clean Gmail, Outlook, and Zoho inboxes from Cursor. Write filters in plain English, preview every cleanup, undo for 30 days.",
   "author": {
     "name": "FeedSheriff",
@@ -29,7 +29,7 @@
       "API_TOKEN": {
         "type": "string",
         "title": "FeedSheriff API key",
-        "description": "Create one at https://feedsheriff.com/app/settings. Starts with fs_live_. Needs a Solo or Multi plan."
+        "description": "Create one at https://feedsheriff.com/app/settings?tab=agents. Starts with fs_live_. Needs a Solo or Multi plan."
       }
     },
     "required": ["API_TOKEN"]

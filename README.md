@@ -11,7 +11,7 @@ Write filters in plain English, preview every cleanup, undo anything for 30 days
 
 [![Website](https://img.shields.io/badge/Website-feedsheriff.com-111111?style=for-the-badge)](https://feedsheriff.com)
 [![MCP Docs](https://img.shields.io/badge/MCP-Docs-2563eb?style=for-the-badge)](https://feedsheriff.com/docs/mcp)
-[![Get API key](https://img.shields.io/badge/Get-API%20key-16a34a?style=for-the-badge)](https://feedsheriff.com/app/settings)
+[![Get API key](https://img.shields.io/badge/Get-API%20key-16a34a?style=for-the-badge)](https://feedsheriff.com/app/settings?tab=agents)
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![MCP](https://img.shields.io/badge/MCP-streamable--http-8b5cf6)](https://modelcontextprotocol.io)
@@ -40,7 +40,7 @@ Write filters in plain English, preview every cleanup, undo anything for 30 days
 
 ### Cursor
 
-[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=feedsheriff&config=eyJ1cmwiOiJodHRwczovL2ZlZWRzaGVyaWZmLmNvbS9tY3AifQ==)
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=feedsheriff-mcp&config=eyJ1cmwiOiJodHRwczovL2ZlZWRzaGVyaWZmLmNvbS9tY3AifQ==)
 
 Or install **FeedSheriff** from the [Cursor Marketplace](https://cursor.com/marketplace) and paste your API key when asked.
 
@@ -49,7 +49,7 @@ Or install **FeedSheriff** from the [Cursor Marketplace](https://cursor.com/mark
 
 ### VS Code
 
-[![Install in VS Code](https://img.shields.io/badge/VS%20Code-Install%20MCP-007acc?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=feedsheriff&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A//feedsheriff.com/mcp%22%7D)
+[![Install in VS Code](https://img.shields.io/badge/VS%20Code-Install%20MCP-007acc?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=feedsheriff-mcp&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A//feedsheriff.com/mcp%22%7D)
 
 Signs in with OAuth. You pick the scopes in the app.
 
@@ -61,7 +61,7 @@ Signs in with OAuth. You pick the scopes in the app.
 ### Claude Code
 
 ```bash
-claude mcp add --transport http feedsheriff https://feedsheriff.com/mcp
+claude mcp add --transport http feedsheriff-mcp https://feedsheriff.com/mcp
 ```
 
 Claude opens a browser for OAuth. Approve `read`, `write`, and (optionally) `cleanup`.
@@ -74,7 +74,7 @@ Claude opens a browser for OAuth. Approve `read`, `write`, and (optionally) `cle
 ```json
 {
   "mcpServers": {
-    "feedsheriff": {
+    "feedsheriff-mcp": {
       "url": "https://feedsheriff.com/mcp",
       "headers": {
         "Authorization": "Bearer fs_live_YOUR_KEY"
@@ -84,7 +84,7 @@ Claude opens a browser for OAuth. Approve `read`, `write`, and (optionally) `cle
 }
 ```
 
-[Create a key](https://feedsheriff.com/app/settings)
+[Create a key](https://feedsheriff.com/app/settings?tab=agents)
 
 </td>
 </tr>

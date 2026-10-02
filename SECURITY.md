@@ -6,4 +6,4 @@ Email **sarthak@feedsheriff.com** with details and steps to reproduce. Please do
 
 We aim to reply within 3 business days.
 
-Never include real API keys (`fs_live_…`) or OAuth tokens in reports. Revoke exposed keys in [Settings](https://feedsheriff.com/app/settings).
+Never include real API keys (`fs_live_…`) or OAuth tokens in reports. Revoke exposed keys in [Settings](https://feedsheriff.com/app/settings?tab=agents).

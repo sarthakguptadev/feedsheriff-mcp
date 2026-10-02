@@ -1,7 +1,7 @@
 {
-  "name": "feedsheriff",
+  "name": "feedsheriff-mcp",
   "description": "Clean Gmail, Outlook, and Zoho inboxes from Claude Code. Write filters in plain English, preview every cleanup, undo for 30 days.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "FeedSheriff",
     "email": "sarthak@feedsheriff.com",
