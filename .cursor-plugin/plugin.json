@@ -1,23 +1,35 @@
 {
   "name": "feedsheriff",
-  "version": "1.0.0",
-  "description": "Clean Gmail, Outlook, and Zoho inboxes with filters, review, and undo via the hosted FeedSheriff MCP server.",
+  "version": "1.0.1",
+  "description": "Clean Gmail, Outlook, and Zoho inboxes from Cursor. Write filters in plain English, preview every cleanup, undo for 30 days.",
   "author": {
     "name": "FeedSheriff",
     "email": "sarthak@feedsheriff.com"
   },
-  "homepage": "https://feedsheriff.com/docs/mcp",
+  "homepage": "https://feedsheriff.com",
   "repository": "https://github.com/sarthakguptadev/feedsheriff",
   "license": "MIT",
-  "keywords": ["email", "gmail", "outlook", "zoho", "inbox", "mcp"],
+  "keywords": [
+    "email",
+    "inbox",
+    "gmail",
+    "outlook",
+    "zoho",
+    "inbox-zero",
+    "email-cleanup",
+    "filters",
+    "mcp",
+    "productivity"
+  ],
   "logo": "assets/logo.png",
+  "category": "productivity",
   "variables": {
     "type": "object",
     "properties": {
       "API_TOKEN": {
         "type": "string",
         "title": "FeedSheriff API key",
-        "description": "Key from https://feedsheriff.com/app/settings. Starts with fs_live_."
+        "description": "Create one at https://feedsheriff.com/app/settings. Starts with fs_live_. Needs a Solo or Multi plan."
       }
     },
     "required": ["API_TOKEN"]

@@ -1,13 +1,14 @@
 {
   "name": "feedsheriff",
-  "description": "Clean Gmail, Outlook, and Zoho inboxes with filters, review, and undo.",
-  "version": "1.0.0",
+  "description": "Clean Gmail, Outlook, and Zoho inboxes from Claude Code. Write filters in plain English, preview every cleanup, undo for 30 days.",
+  "version": "1.0.1",
   "author": {
     "name": "FeedSheriff",
-    "email": "sarthak@feedsheriff.com"
+    "email": "sarthak@feedsheriff.com",
+    "url": "https://feedsheriff.com"
   },
-  "homepage": "https://feedsheriff.com/docs/mcp",
+  "homepage": "https://feedsheriff.com",
   "repository": "https://github.com/sarthakguptadev/feedsheriff",
   "license": "MIT",
-  "keywords": ["email", "gmail", "outlook", "inbox", "mcp"]
+  "keywords": ["email", "inbox", "gmail", "outlook", "zoho", "email-cleanup", "mcp", "productivity"]
 }
