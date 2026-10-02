@@ -1,7 +1,7 @@
 {
   "name": "feedsheriff-mcp",
-  "version": "1.0.2",
-  "description": "MCP server for AI agents. Clean Gmail, Outlook, and Zoho inboxes from Cursor. Preview every cleanup, undo for 30 days.",
+  "version": "1.1.0",
+  "description": "MCP server and skills for AI agents. Clean Gmail, Outlook, and Zoho inboxes from Cursor. Preview every cleanup, undo for 30 days.",
   "author": {
     "name": "FeedSheriff",
     "email": "sarthak@feedsheriff.com"
@@ -19,6 +19,7 @@
     "email-cleanup",
     "filters",
     "mcp",
+    "skills",
     "productivity"
   ],
   "logo": "assets/logo.png",

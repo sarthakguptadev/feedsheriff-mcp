@@ -7,7 +7,7 @@
 # FeedSheriff MCP
 
 **Inbox cleanup for AI agents.**
-Let Claude, Cursor, and VS Code clean Gmail, Outlook, and Zoho. Write filters in plain English, preview every cleanup, undo anything for 30 days.
+Let Claude, ChatGPT, Cursor, VS Code, and Codex clean Gmail, Outlook, and Zoho. Write filters in plain English, preview every cleanup, undo anything for 30 days.
 
 [![Website](https://img.shields.io/badge/Website-feedsheriff.com-111111?style=for-the-badge)](https://feedsheriff.com)
 [![MCP Docs](https://img.shields.io/badge/MCP-Docs-2563eb?style=for-the-badge)](https://feedsheriff.com/docs/mcp)
@@ -30,33 +30,35 @@ Let Claude, Cursor, and VS Code clean Gmail, Outlook, and Zoho. Write filters in
 
 <br />
 
-> This repo is the **plugin package** for Cursor and Claude Code. The product runs as a hosted service at **`https://feedsheriff.com/mcp`**. Nothing here runs on your machine.
+> This repo is the **plugin package**: MCP config, skills, and slash commands. The product runs at **`https://feedsheriff.com/mcp`**. Nothing here runs on your machine.
+
+Paid **Solo** or **Multi** plan required. Cleanup is **off** unless you turn that scope on.
 
 ## Install
 
-<table>
-<tr>
-<td width="50%" valign="top">
+Same server for every client: `https://feedsheriff.com/mcp`
+
+**OAuth** (ChatGPT, Claude, VS Code, Codex, and most others): the client opens a browser. You pick `read`, `write`, and optionally `cleanup`.
+
+**API key** (Cursor marketplace, scripts): create one in [Settings → AI Agents](https://feedsheriff.com/app/settings?tab=agents). Starts with `fs_live_`.
 
 ### Cursor
 
 [![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=feedsheriff-mcp&config=eyJ1cmwiOiJodHRwczovL2ZlZWRzaGVyaWZmLmNvbS9tY3AifQ==)
 
-Or install **FeedSheriff** from the [Cursor Marketplace](https://cursor.com/marketplace) and paste your API key when asked.
+Or add to `~/.cursor/mcp.json` (OAuth):
 
-</td>
-<td width="50%" valign="top">
+```json
+{
+  "mcpServers": {
+    "feedsheriff-mcp": {
+      "url": "https://feedsheriff.com/mcp"
+    }
+  }
+}
+```
 
-### VS Code
-
-[![Install in VS Code](https://img.shields.io/badge/VS%20Code-Install%20MCP-007acc?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=feedsheriff-mcp&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A//feedsheriff.com/mcp%22%7D)
-
-Signs in with OAuth. You pick the scopes in the app.
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
+Install this GitHub repo as a Cursor plugin to get the skills below, then paste an API key if the plugin asks.
 
 ### Claude Code
 
@@ -64,12 +66,124 @@ Signs in with OAuth. You pick the scopes in the app.
 claude mcp add --transport http feedsheriff-mcp https://feedsheriff.com/mcp
 ```
 
-Claude opens a browser for OAuth. Approve `read`, `write`, and (optionally) `cleanup`.
+Then `/mcp` and finish OAuth. For skills + slash commands:
 
-</td>
-<td width="50%" valign="top">
+```bash
+/plugin marketplace add sarthakguptadev/feedsheriff-mcp
+/plugin install feedsheriff-mcp@feedsheriff-mcp
+```
 
-### Any MCP client
+### Claude Desktop / Claude.ai
+
+Add a custom connector with URL `https://feedsheriff.com/mcp`, or put this in `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "feedsheriff-mcp": {
+      "url": "https://feedsheriff.com/mcp"
+    }
+  }
+}
+```
+
+Complete OAuth when prompted.
+
+### ChatGPT
+
+Settings → Apps & Connectors → add a custom MCP connector.
+
+- Server URL: `https://feedsheriff.com/mcp`
+- Auth: OAuth
+
+Approve scopes in FeedSheriff. You need a ChatGPT plan that allows custom connectors.
+
+### Codex
+
+`~/.codex/config.toml`:
+
+```toml
+[mcp_servers.feedsheriff-mcp]
+url = "https://feedsheriff.com/mcp"
+```
+
+Then:
+
+```bash
+codex mcp login feedsheriff-mcp
+```
+
+### VS Code (Copilot)
+
+`.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "feedsheriff-mcp": {
+      "type": "http",
+      "url": "https://feedsheriff.com/mcp"
+    }
+  }
+}
+```
+
+Command Palette → **MCP: List Servers** → start FeedSheriff → OAuth.
+
+[![Install in VS Code](https://img.shields.io/badge/VS%20Code-Install%20MCP-007acc?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=feedsheriff-mcp&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A//feedsheriff.com/mcp%22%7D)
+
+### Windsurf
+
+`~/.codeium/windsurf/mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "feedsheriff-mcp": {
+      "serverUrl": "https://feedsheriff.com/mcp"
+    }
+  }
+}
+```
+
+### Gemini / Antigravity
+
+```json
+{
+  "mcpServers": {
+    "feedsheriff-mcp": {
+      "serverUrl": "https://feedsheriff.com/mcp"
+    }
+  }
+}
+```
+
+### Any other MCP client
+
+```json
+{
+  "mcpServers": {
+    "feedsheriff-mcp": {
+      "url": "https://feedsheriff.com/mcp"
+    }
+  }
+}
+```
+
+If the client has no remote HTTP support:
+
+```json
+{
+  "mcpServers": {
+    "feedsheriff-mcp": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://feedsheriff.com/mcp"]
+    }
+  }
+}
+```
+
+API key instead of OAuth:
 
 ```json
 {
@@ -84,13 +198,19 @@ Claude opens a browser for OAuth. Approve `read`, `write`, and (optionally) `cle
 }
 ```
 
-[Create a key](https://feedsheriff.com/app/settings?tab=agents)
+## Skills
 
-</td>
-</tr>
-</table>
+These teach the agent how to use the tools. Same idea as Notion's plugin: MCP for access, skills for the workflow.
 
-You need a **Solo** or **Multi** plan. Cleanup is **off** unless you turn that scope on for the key.
+| Skill | When to use it |
+|---|---|
+| `inbox-status` | Plan, mailboxes, dashboard, live scans |
+| `draft-filter` | Write, test, and save a filter in plain English |
+| `inbox-cleanup` | Preview, then start a cleanup |
+| `review-queue` | Keep or toss mail waiting in Review |
+| `undo-cleanup` | Reverse a sweep or one action |
+
+Claude Code slash commands: `/feedsheriff-mcp:status` `/feedsheriff-mcp:draft-filter` `/feedsheriff-mcp:cleanup` `/feedsheriff-mcp:review` `/feedsheriff-mcp:undo`
 
 ## What your agent can do
 
@@ -110,7 +230,7 @@ Try asking:
 ## Safe by default
 
 - **Preview first.** `start_cleanup` needs a short-lived confirm token from `preview_cleanup`.
-- **Cleanup is opt-in.** It is a separate key scope, off by default.
+- **Cleanup is opt-in.** It is a separate key or OAuth scope, off by default.
 - **Starred and important mail is never moved.** Uncertain mail waits in Review.
 - **Undo for 30 days.** Trash keeps mail 30 days, and every action can be reversed.
 - **Email text is untrusted.** Sender and subject in tool output are marked so models don't follow instructions hidden in mail.
@@ -120,8 +240,8 @@ Try asking:
 
 | Method | Use it for |
 |---|---|
-| **OAuth 2.1** (dynamic client registration, PKCE) | Claude, VS Code, ChatGPT-style clients |
-| **API key** `fs_live_…` | Cursor, scripts, anything that sends a Bearer header |
+| **OAuth 2.1** (dynamic client registration, PKCE) | ChatGPT, Claude, VS Code, Codex, Windsurf, Gemini |
+| **API key** `fs_live_…` | Cursor plugin, scripts, anything that sends a Bearer header |
 
 Metadata: [`/.well-known/oauth-protected-resource`](https://feedsheriff.com/.well-known/oauth-protected-resource) · [`/.well-known/oauth-authorization-server`](https://feedsheriff.com/.well-known/oauth-authorization-server)
 
@@ -134,7 +254,8 @@ Metadata: [`/.well-known/oauth-protected-resource`](https://feedsheriff.com/.wel
 ├── .cursor-plugin/        Cursor plugin manifest
 ├── .claude-plugin/        Claude Code plugin + marketplace manifest
 ├── .mcp.json              Claude Code MCP config (OAuth)
-├── skills/inbox-cleanup/  Skill: safe cleanup workflow for agents
+├── skills/                How the agent should use each workflow
+├── commands/              Claude Code slash commands
 └── assets/                Logo and banner
 ```
 
