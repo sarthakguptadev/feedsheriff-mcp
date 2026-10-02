@@ -34,6 +34,31 @@ Let Claude, ChatGPT, Cursor, VS Code, and Codex clean Gmail, Outlook, and Zoho. 
 
 Paid **Solo** or **Multi** plan required. Cleanup is **off** unless you turn that scope on.
 
+## Paste into your agent
+
+Copy this into Claude, ChatGPT, Cursor, Codex, or any other agent. It will add the MCP server and walk you through OAuth.
+
+```
+Set up FeedSheriff MCP in this agent.
+
+Server: https://feedsheriff.com/mcp (Streamable HTTP)
+Docs: https://feedsheriff.com/docs/mcp
+Plugin + skills: https://github.com/sarthakguptadev/feedsheriff-mcp
+I have a paid Solo or Multi plan at feedsheriff.com.
+
+1. Detect which client you are (Claude Code, Claude Desktop, ChatGPT, Codex, Cursor, VS Code, Windsurf, Gemini, or other).
+2. Add the server with that client's native install. Prefer OAuth. Do not invent an API key.
+3. If this client cannot do OAuth, tell me to create a key at https://feedsheriff.com/app/settings?tab=agents (starts with fs_live_) and wait for me to paste it.
+4. For Claude Code also run:
+   /plugin marketplace add sarthakguptadev/feedsheriff-mcp
+   /plugin install feedsheriff-mcp@feedsheriff-mcp
+5. Complete browser OAuth. Ask me to approve read, write, and cleanup if I want the agent to move mail.
+6. Verify tools are listed. Confirm when done.
+7. Never call start_cleanup without preview_cleanup first, and never before I confirm the counts.
+
+If you can read URLs, follow https://feedsheriff.com/docs/mcp
+```
+
 ## Install
 
 Same server for every client: `https://feedsheriff.com/mcp`
