@@ -1,0 +1,15 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "feedsheriff",
+  "version": "1.0.0",
+  "description": "Clean Gmail, Outlook, and Zoho inboxes with filters, review, and undo.",
+  "author": {
+    "name": "FeedSheriff",
+    "email": "sarthak@feedsheriff.com",
+    "url": "https://feedsheriff.com"
+  },
+  "homepage": "https://feedsheriff.com/docs/mcp",
+  "repository": "https://github.com/sarthakguptadev/feedsheriff",
+  "license": "MIT",
+  "keywords": ["email", "gmail", "outlook", "zoho", "inbox", "mcp"]
+}

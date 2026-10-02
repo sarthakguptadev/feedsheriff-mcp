@@ -1,0 +1,17 @@
+{
+  "name": "feedsheriff",
+  "owner": {
+    "name": "FeedSheriff",
+    "email": "sarthak@feedsheriff.com"
+  },
+  "metadata": {
+    "description": "FeedSheriff hosted MCP plugin for inbox cleanup"
+  },
+  "plugins": [
+    {
+      "name": "feedsheriff",
+      "source": "./",
+      "description": "Clean Gmail, Outlook, and Zoho inboxes with filters, review, and undo."
+    }
+  ]
+}
