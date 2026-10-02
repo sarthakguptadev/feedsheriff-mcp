@@ -5,13 +5,13 @@
     "email": "sarthak@feedsheriff.com"
   },
   "metadata": {
-    "description": "FeedSheriff hosted MCP plugin: clean Gmail, Outlook, and Zoho inboxes from your agent."
+    "description": "FeedSheriff MCP for AI agents: clean Gmail, Outlook, and Zoho inboxes from Claude Code."
   },
   "plugins": [
     {
       "name": "feedsheriff-mcp",
       "source": "./",
-      "description": "Clean Gmail, Outlook, and Zoho inboxes from Claude Code. Preview every cleanup, undo for 30 days.",
+      "description": "MCP server for AI agents. Clean Gmail, Outlook, and Zoho inboxes from Claude Code. Preview every cleanup, undo for 30 days.",
       "category": "productivity",
       "homepage": "https://feedsheriff.com"
     }

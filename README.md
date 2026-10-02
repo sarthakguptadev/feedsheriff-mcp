@@ -4,10 +4,10 @@
   <img src="assets/logo.png" alt="FeedSheriff" width="120" height="120" />
 </a>
 
-# FeedSheriff for AI agents
+# FeedSheriff MCP
 
-**Let Claude, Cursor, and VS Code clean your Gmail, Outlook, and Zoho inbox.**
-Write filters in plain English, preview every cleanup, undo anything for 30 days.
+**Inbox cleanup for AI agents.**
+Let Claude, Cursor, and VS Code clean Gmail, Outlook, and Zoho. Write filters in plain English, preview every cleanup, undo anything for 30 days.
 
 [![Website](https://img.shields.io/badge/Website-feedsheriff.com-111111?style=for-the-badge)](https://feedsheriff.com)
 [![MCP Docs](https://img.shields.io/badge/MCP-Docs-2563eb?style=for-the-badge)](https://feedsheriff.com/docs/mcp)
@@ -23,7 +23,7 @@ Write filters in plain English, preview every cleanup, undo anything for 30 days
 <br />
 
 <a href="https://feedsheriff.com">
-  <img src="assets/banner.png" alt="FeedSheriff: clean up junk email in Gmail, Outlook and Zoho" width="720" />
+  <img src="assets/banner.png" alt="FeedSheriff MCP: inbox cleanup for AI agents" width="720" />
 </a>
 
 </div>
