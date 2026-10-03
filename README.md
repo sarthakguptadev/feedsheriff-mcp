@@ -36,28 +36,19 @@ Paid **Solo** or **Multi** plan required. Cleanup is **off** unless you turn tha
 
 ## Paste into your agent
 
-Copy this into Claude, ChatGPT, Cursor, Codex, or any other agent. It will add the MCP server and walk you through OAuth.
+One line. The agent reads the skill, adds MCP, and walks you through OAuth (or your API key).
 
+```text
+Set up https://feedsheriff.com/SKILL.md
 ```
-Set up FeedSheriff MCP in this agent.
 
-Server: https://feedsheriff.com/mcp (Streamable HTTP)
-Docs: https://feedsheriff.com/docs/mcp
-Plugin + skills: https://github.com/sarthakguptadev/feedsheriff-mcp
-I have a paid Solo or Multi plan at feedsheriff.com.
+With an API key from [Settings → AI Agents](https://feedsheriff.com/app/settings?tab=agents):
 
-1. Detect which client you are (Claude Code, Claude Desktop, ChatGPT, Codex, Cursor, VS Code, Windsurf, Gemini, or other).
-2. Add the server with that client's native install. Prefer OAuth. Do not invent an API key.
-3. If this client cannot do OAuth, tell me to create a key at https://feedsheriff.com/app/settings?tab=agents (starts with fs_live_) and wait for me to paste it.
-4. For Claude Code also run:
-   /plugin marketplace add sarthakguptadev/feedsheriff-mcp
-   /plugin install feedsheriff-mcp@feedsheriff-mcp
-5. Complete browser OAuth. Ask me to approve read, write, and cleanup if I want the agent to move mail.
-6. Verify tools are listed. Confirm when done.
-7. Never call start_cleanup without preview_cleanup first, and never before I confirm the counts.
-
-If you can read URLs, follow https://feedsheriff.com/docs/mcp
+```text
+Set up https://feedsheriff.com/SKILL.md with this FeedSheriff API key: fs_live_YOUR_KEY
 ```
+
+Skill source: [feedsheriff.com/SKILL.md](https://feedsheriff.com/SKILL.md) · Docs: [feedsheriff.com/docs/mcp](https://feedsheriff.com/docs/mcp)
 
 ## Install
 
@@ -97,6 +88,8 @@ Then `/mcp` and finish OAuth. For skills + slash commands:
 /plugin marketplace add sarthakguptadev/feedsheriff-mcp
 /plugin install feedsheriff-mcp@feedsheriff-mcp
 ```
+
+Or paste `Set up https://feedsheriff.com/SKILL.md` and let Claude Code do both.
 
 ### Claude Desktop / Claude.ai
 
@@ -225,7 +218,9 @@ API key instead of OAuth:
 
 ## Skills
 
-These teach the agent how to use the tools. Same idea as Notion's plugin: MCP for access, skills for the workflow.
+**Onboarding** (hosted): [https://feedsheriff.com/SKILL.md](https://feedsheriff.com/SKILL.md) — paste `Set up https://feedsheriff.com/SKILL.md` into any agent.
+
+**Workflow skills** in this repo teach how to use the tools after connect. Same idea as Notion / AnyAPI: MCP for access, skills for the workflow.
 
 | Skill | When to use it |
 |---|---|
@@ -236,6 +231,7 @@ These teach the agent how to use the tools. Same idea as Notion's plugin: MCP fo
 | `undo-cleanup` | Reverse a sweep or one action |
 
 Claude Code slash commands: `/feedsheriff-mcp:status` `/feedsheriff-mcp:draft-filter` `/feedsheriff-mcp:cleanup` `/feedsheriff-mcp:review` `/feedsheriff-mcp:undo`
+
 
 ## What your agent can do
 
@@ -274,6 +270,7 @@ Metadata: [`/.well-known/oauth-protected-resource`](https://feedsheriff.com/.wel
 
 ```
 .
+├── SKILL.md               Onboarding skill (same as feedsheriff.com/SKILL.md)
 ├── plugin.json            Agent Plugins manifest (Cursor)
 ├── mcp.json               Hosted MCP server + API key variable
 ├── .cursor-plugin/        Cursor plugin manifest
@@ -286,7 +283,7 @@ Metadata: [`/.well-known/oauth-protected-resource`](https://feedsheriff.com/.wel
 
 ## Links
 
-[Website](https://feedsheriff.com) · [MCP docs](https://feedsheriff.com/docs/mcp) · [Privacy](https://feedsheriff.com/privacy) · [Terms](https://feedsheriff.com/terms) · [Pricing](https://feedsheriff.com/#pricing) · [X @sarthakguptadev](https://x.com/sarthakguptadev) · [sarthak@feedsheriff.com](mailto:sarthak@feedsheriff.com)
+[Website](https://feedsheriff.com) · [Skill](https://feedsheriff.com/SKILL.md) · [MCP docs](https://feedsheriff.com/docs/mcp) · [Privacy](https://feedsheriff.com/privacy) · [Terms](https://feedsheriff.com/terms) · [Pricing](https://feedsheriff.com/#pricing) · [X @sarthakguptadev](https://x.com/sarthakguptadev) · [sarthak@feedsheriff.com](mailto:sarthak@feedsheriff.com)
 
 ## License
 
